@@ -49,6 +49,12 @@ def decrypt_bruteforce(message:str) -> list[tuple[str, int]]:
     return [(decrypt(message, key=i), i) for i in range(len(CaeserAlphabets().alphabet))]
 
 def decrypt_frequency_analysis(message:str) -> tuple[str, int]:
+    """
+    Checks the message for the highest frequency of a letter in the message and tries to decrypt the message by
+    assuming the letter is the most common based on the frequency alphabet. Return only the most likely solution
+    :param message: message to decrypt
+    :return: decrypted message, key to decrypt
+    """
     alpha = CaeserAlphabets()
     letter_count = sorted([(letter, message.upper().count(letter)) for letter in alpha.alphabet],
                           key=lambda item : item[1],

@@ -2,7 +2,7 @@ import json
 import os
 
 class CaeserAlphabets:
-    def __init__(self, lang:str='DE', path:str = os.path.join('cryptool', 'configs', 'caeser')):
+    def __init__(self, lang:str='DE', path:str = os.path.join('cryptool', 'cryptool', 'configs', 'caeser')):
         self._language = lang
         self._alphabet = []
         self._frequency_alphabet = []
